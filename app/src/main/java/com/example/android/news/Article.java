@@ -3,16 +3,15 @@ package com.example.android.news;
 import java.util.Date;
 
 /**
- * An article of the News app. Each article includes title, section name, author, publication date
- * and URL.
+ * Um artigo do app News. Cada artigo inclui o título, nome da seção, nome do autor, data de publicação e URL.
  */
 public class Article {
 
-    private String mTitle;
-    private String mSectionName;
-    private String mAuthorName;
-    private Date mPublicationDate;
-    private String mUrl;
+    private String mTitle;          // Titulo do artigo
+    private String mSectionName;    // Nome da seção do artigo
+    private String mAuthorName;     // Nome do autor do artigo
+    private Date mPublicationDate;  // Data de publicaçao do artigo
+    private String mUrl;            // URL do artigo
 
     public Article(String title, String sectionName, String authorName, Date publicationDate,
                    String url) {

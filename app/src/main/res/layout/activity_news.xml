@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.news.NewsActivity">
 
+    <!-- Layout para a lista de artigos -->
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/list"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:divider="@null"
+              android:dividerHeight="0dp"/>
+
+    <!-- TextView para a lista de artigos vazia -->
     <TextView
+        android:id="@+id/empty_list_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:textAppearance="?android:textAppearanceMedium"
+        tools:text="@string/empty_list" >
+    </TextView>
+
+    <!-- Barra de progressos para a carga de artigos -->
+    <ProgressBar
+        android:indeterminate="true"
+        android:id="@+id/marker_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
 </android.support.constraint.ConstraintLayout>
