@@ -136,7 +136,17 @@ public class QueryUtils {
                         String title = article.getString("webTitle");
                         String sectionName = article.getString("sectionName");
                         String authorName = "";
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                        if (article.has("tags")) {
+                            JSONArray tags = article.getJSONArray("tags");
+                            if (tags.length()>0) {
+                                JSONObject author = tags.getJSONObject(0);
+                                if (author.has("webTitle")) {
+                                    authorName = author.getString("webTitle");
+                                }
+                            }
+                        }
+
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
                         Date publicationDate = null;
                         try {
                             publicationDate = simpleDateFormat.parse(article.getString("webPublicationDate"));

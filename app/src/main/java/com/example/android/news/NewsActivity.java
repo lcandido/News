@@ -44,11 +44,13 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 Article currentArticle = mAdapter.getItem(position);
-                String url = currentArticle.getUrl();
+                if (currentArticle != null) {
+                    String url = currentArticle.getUrl();
 
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
             }
         });
 
@@ -75,6 +77,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
         uriBuilder.appendQueryParameter("q", "debates");
         uriBuilder.appendQueryParameter("api-key", "test");
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
 
         return new ArticleLoader(this, uriBuilder.toString());
     }

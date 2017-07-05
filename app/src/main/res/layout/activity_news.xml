@@ -8,13 +8,12 @@
     tools:context="com.example.android.news.NewsActivity">
 
     <!-- Layout para a lista de artigos -->
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/list"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:divider="@null"
-              android:dividerHeight="0dp"/>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
 
     <!-- TextView para a lista de artigos vazia -->
     <TextView
